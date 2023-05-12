@@ -1,0 +1,17 @@
+.page__body {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  min-width: 327px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 300;
+  background: $page-background;
+}
+
+.page__body-wrapper {
+  width: 100%;
+  @media (min-width: $desktop-width) {
+    max-width: 1200px;
+    margin: auto;
+  }
+}

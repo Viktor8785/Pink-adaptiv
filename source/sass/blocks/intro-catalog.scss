@@ -1,0 +1,30 @@
+.intro-catalog__slogan {
+  display: block;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  color: $menu-text;
+  margin-top: -30px;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  &--closed {
+    margin-top: 27px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-top: -23px;
+    font-size: 50px;
+    line-height: 68px;
+    &--closed {
+      margin-top: 87px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 68px;
+    margin-top: 117px;
+  }
+}

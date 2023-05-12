@@ -1,0 +1,92 @@
+.intro-form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  height: inherit;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-form__img {
+  height: 173px;
+  display: grid;
+  align-content: center;
+  background-image: url("../../img/back-mobile-form.jpg");
+  background-position: 0 -66px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../../img/back-mobile-form2x.jpg");
+  }
+  &--closed {
+    height: 239px;
+    background-position: 0 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 330px;
+    background-image: url("../../img/back-tablet-form.jpg");
+    background-position: 0 -110px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/back-tablet-form2x.jpg");
+    }
+
+    &--closed {
+      height: 440px;
+      background-position: 0 0;
+    }
+  }
+  @media (min-width: $desktop-width) {
+    height: 394px;
+    background-image: url("../../img/back-desktop-form.jpg");
+    background-position: 0 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/back-desktop-form2x.jpg");
+    }
+  }
+}
+
+.intro-form__slogan {
+  display: block;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  color: $menu-text;
+  margin-top: 0;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  &--closed {
+    margin-top: 74px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-top: 30px;
+    font-size: 50px;
+    line-height: 68px;
+    &--closed {
+      margin-top: 135px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 68px;
+    margin-top: 84px;
+  }
+}
+
+.intro-form__br {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}

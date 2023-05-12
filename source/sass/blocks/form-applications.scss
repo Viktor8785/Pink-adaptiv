@@ -1,0 +1,91 @@
+.form-applications {
+  display: grid;
+  width: 100%;
+  min-height: 338px;
+  grid-template-rows: minmax(338px, max-content);
+  font-weight: 400;
+  font-size: 18px;
+  color: $main-text;
+  border: none;
+  background-color: $blocks-background;
+
+  @media (min-width: $tablet-width) {
+    width: calc(100% - 4px);
+    min-height: 297px;
+    grid-template-rows: minmax(297px, max-content);
+    order: 2;
+    margin-bottom: 70px;
+    border: 2px solid $page-background;
+    border-radius: 2px;
+    background-color: #ffffff;
+    & legend {
+      margin-top: -45px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 292px;
+    height: 292px;
+    margin-top: -8px;
+  }
+}
+
+.form-applications__wrapper {
+  display: grid;
+  margin: 0 20px;
+  justify-items: left;
+  align-self: center;
+  grid-template-rows: 108px repeat(3, 75px);
+  align-items: start;
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: min-content repeat(3, 75px);
+    align-items: center;
+    margin: 0;
+    margin-left: 62px;
+    & legend {
+      margin-left: -62px;
+    }
+  }
+}
+
+.form__radio + label {
+  position: relative;
+  padding-left: 67px;
+  margin-top: 10px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 33px;
+    height: 33px;
+    border: 2px solid $page-background;
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+  &:hover::before {
+    border: 2px solid $main-text;
+
+    @media (hover: none) and (pointer: coarse) {
+      border: 2px solid $page-background;
+    }
+  }
+  &:active::before {
+    border: 2px solid $firm-text;
+  }
+}
+
+.form__radio:checked + label {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 11px;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: $firm-text;
+  }
+}

@@ -1,0 +1,340 @@
+.price {
+  position: relative;
+  background-color: $blocks-background;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom right, white 50%, $blocks-background 50%);
+  }
+  @media (min-width: $tablet-width) {
+      &::before {
+        height: 42px;
+      }
+  }
+  @media (min-width: $desktop-width) {
+      &::before {
+        height: 100px;
+      }
+  }
+}
+
+.price__wrapper {
+  display: grid;
+  min-height: 480px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 387px;
+    margin: 0 20px;
+  }
+  @media (min-width: $desktop-width) {
+    min-height: 534px;
+    margin: 0 130px;
+  }
+}
+
+.price__table {
+  width: 100%;
+  min-width: 327px;
+  margin-top: auto;
+  display: grid;
+  grid-template-rows: minmax(94px, max-content) repeat(3, minmax(59px, max-content));
+  grid-template-columns: 0.75fr 0.25fr;
+  overflow: hidden;
+  background-color: #ffffff;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 98px;
+    grid-template-rows: minmax(75px, max-content) repeat(3, minmax(45px, max-content));
+    grid-template-columns: repeat(4, 1fr);
+    background-color: transparent;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 157px;
+    grid-template-rows: minmax(94px, max-content) repeat(3, minmax(59px, max-content));
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.price__th {
+  position: relative;
+  height: 100%;
+  display: none;
+  width: 100%;
+  background-color: $menu-background;
+  &--active {
+    display: block;
+    grid-column: span 2;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    left: 660px;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    grid-column: auto;
+    &:nth-child(2) {
+      border-radius: 2px 0 0 0;
+    }
+    &:nth-child(4) {
+      border-radius: 0 2px 0 0;
+    }
+  }
+}
+
+.price_th-first {
+  position: relative;
+  height: 100%;
+  display: none;
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    grid-column: auto;
+    background-color: transparent;
+  }
+}
+
+.price__th-wrapper {
+  display: grid;
+  height: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: 2px solid $page-background;
+  border-right: 2px solid $page-background;
+  text-align: center;
+  align-content: start;
+  padding-top: 16px;
+  line-height: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    border: none;
+    align-content: center;
+    padding: 0;
+  }
+  @media (min-width: $desktop-width) {
+    margin: 0;
+    border: none;
+    align-content: center;
+    padding: 0;
+  }
+}
+
+.price__th:nth-child(2) .price__th-wrapper {
+  @media (min-width: $tablet-width) {
+    border-left: none;
+  }
+  @media (min-width: $desktop-width) {
+    border-left: none;
+  }
+}
+
+.price__th:nth-child(3),
+.price__th:nth-child(4) .price__th-wrapper {
+  @media (min-width: $tablet-width) {
+    border-left: 2px solid $page-background;
+  }
+  @media (min-width: $desktop-width) {
+    border-left: 2px solid $page-background;
+  }
+}
+
+.price__th-hit {
+
+  @media (max-width: $mobile-width-only) {
+    animation-name: left;
+    animation-duration: 0.3s;
+  }
+  &::before {
+    position: absolute;
+    content: "ХИТ";
+    width: 74px;
+    height: 74px;
+    transform: rotate(-45deg);
+    top: -7px;
+    left: 44px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    z-index: 1;
+
+    @media (min-width: $tablet-width) {
+      top: -11px;
+      left: 17px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: -7px;
+      left: 24px;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 74px;
+    height: 74px;
+    top: 0;
+    left: 20px;
+    background-image: url("../../img/hit-ribbon.svg");
+    background-repeat: no-repeat;
+    background-size: 74px 74px;
+
+    @media (min-width: $tablet-width) {
+      width: 61px;
+      height: 61px;
+      top: 0;
+      left: -2px;
+      background-image: url("../../img/hit-ribbon-tablet.svg");
+      background-size: 61px 61px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 74px;
+      height: 74px;
+      top: 0px;
+      left: 0px;
+      background-image: url("../../img/hit-ribbon.svg");
+      background-size: 74px 74px;
+    }
+  }
+}
+
+.price__title {
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}
+
+.price__value {
+  font-weight: 300;
+  font-size: 18px;
+  color: white;
+  margin: 0;
+  padding-top: 4px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+  }
+}
+
+.price__td,
+.price__td-base,
+.price__td-standart,
+.price__td-anlim {
+  position: relative;
+  display: none;
+
+  background-color: white;
+  border-bottom: 2px solid $page-background;
+  &--active {
+    display: grid;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    left: 660px;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    border-left: 2px solid $page-background;
+    &:nth-child(4) {
+      border-right: 2px solid $page-background;
+    }
+  }
+}
+
+.price__img-wrapper {
+  display: grid;
+  overflow: hidden;
+  @media (max-width: $mobile-width-only) {
+    margin-right: 20px;
+    border-right: 2px solid $page-background;
+  }
+}
+
+.price__img {
+  margin-right: 20px;
+  justify-self: end;
+  align-self: center;
+
+  @media (min-width: $tablet-width) {
+      margin-right: 0;
+      justify-self: center;
+  }
+}
+
+.price__td-top {
+
+  @media (min-width: $tablet-width) {
+    border-top: 2px solid $page-background;
+  }
+
+  @media (min-width: $desktop-width) {
+    border-top: 2px solid $page-background;
+  }
+}
+
+.price__td-right {
+
+  @media (min-width: $tablet-width) {
+    border-right: 2px solid $page-background;
+  }
+
+  @media (min-width: $desktop-width) {
+    border-right: 2px solid $page-background;
+  }
+}
+
+.price__td-wrapper {
+  display: grid;
+
+  @media (max-width: $mobile-width-only) {
+    margin-left: 20px;
+    border-left: 2px solid $page-background;
+  }
+}
+
+.price__item {
+  margin: 0;
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  color: $main-text;
+  text-transform: uppercase;
+  align-self: center;
+
+
+  @media (min-width: $tablet-width) {
+    text-transform: none;
+    margin-left: 17px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}
+
+.price__toggles {
+  display: none;
+  justify-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  @media (max-width: $mobile-width-only) {
+    display: block;
+  }
+}

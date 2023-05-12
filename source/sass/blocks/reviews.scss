@@ -1,0 +1,232 @@
+.reviews {
+  position: relative;
+  display: grid;
+  background-color: white;
+  min-height: 345px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 238px;
+  }
+  @media (min-width: $desktop-width) {
+    min-height: 405px;
+  }
+}
+
+.reviews__wrapper {
+  margin: 0 20px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    align-self: self-start;
+  }
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    align-self: self-start;
+    margin: 0 130px;
+  }
+}
+
+.reviews__list {
+  overflow: hidden;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 104px;
+    margin-right: 104px;
+  }
+}
+
+.reviews__item {
+  display: grid;
+}
+
+.reviews__quotes-img {
+  display: none;
+  @media (min-width: $desktop-width) {
+    display: block;
+    width: 79px;
+    height: 63px;
+    margin-top: 72px;
+    background-image: url("../../img/quotes.svg");
+    background-repeat: no-repeat;
+    justify-self: center;
+  }
+}
+
+.reviews__blockquote {
+  display: none;
+  margin: 0;
+  animation-name: left;
+  animation-duration: 0.3s;
+  &--active {
+    display: grid;
+  }
+}
+
+.reviews__quote {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: $main-text;
+
+  @media (max-width: $mobile-width-only) {
+    order: 2;
+    font-size: 14px;
+    margin-top: 24px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 44px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 58px;
+    margin-bottom: 29px;
+  }
+}
+
+.reviews__author {
+  font-weight: 700;
+  font-size: 18px;
+  color: $title-text;
+  font-style: normal;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 6px;
+    font-size: 20px;
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 6px;
+    font-size: 24px;
+  }
+}
+
+.reviews__info {
+  font-weight: 400;
+  font-size: 14px;
+  color: $main-text;
+  margin: 0;
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+}
+
+.reviews__prev,
+.reviews__next {
+  display: none;
+  @media (min-width: $desktop-width) {
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 41px;
+    margin-top: 224px;
+    background-color: transparent;
+    border: none;
+    outline-style: none;
+    cursor: pointer;
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 25px;
+      height: 1px;
+      background-color: $main-text;
+      opacity: 30%;
+    }
+    &:hover::before,
+    &:hover::after {
+      opacity: 100%;
+
+      @media (hover: none) and (pointer: coarse) {
+        opacity: 30%;
+      }
+    }
+    &:active::before,
+    &:active::after {
+      opacity: 10%;
+      cursor: auto;
+    }
+  }
+}
+
+.reviews__prev {
+  @media (min-width: $desktop-width) {
+    &::before {
+      top: 28px;
+      left: -6px;
+      transform: rotate(50deg);
+    }
+    &::after {
+      top: 9px;
+      left: -6px;
+      transform: rotate(-50deg);
+    }
+  }
+}
+
+.reviews__next {
+  @media (min-width: $desktop-width) {
+    &::before {
+      top: 9px;
+      left: -6px;
+      transform: rotate(50deg);
+    }
+    &::after {
+      top: 28px;
+      left: -6px;
+      transform: rotate(-50deg);
+    }
+  }
+}
+
+.reviews__toggles {
+  margin-top: 34px;
+  margin-bottom: 6px;
+  @media (min-width: $tablet-width) {
+    margin-top: 29px;
+  }
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.slider__toggle,
+.slider__toggle-price {
+  width: 6px;
+  height: 6px;
+  box-sizing: border-box;
+  background-color: $main-text;
+  opacity: 30%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+
+    &:first-child {
+      margin-right: 15px;
+    }
+    &:last-child {
+      margin-left: 15px;
+    }
+    &:hover {
+      opacity: 60%;
+    }
+    &:active {
+      opacity: 10%;
+    }
+    &--active,
+    &--active:hover,
+    &--active:active {
+      outline: 3px solid $main-text;
+      opacity: 100%;
+      background-color: white;
+      cursor: auto;
+    }
+}

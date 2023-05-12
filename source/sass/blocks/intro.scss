@@ -1,0 +1,254 @@
+.intro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  height: inherit;
+  grid-template-columns: 1fr;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  color: $menu-text;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro__img {
+  height: 669px;
+  display: grid;
+  align-content: center;
+  background-image: url("../../img/phone-mobile.png"),
+                    url("../../img/screen-mobile.jpg"),
+                    url("../../img/back-mobile.jpg");
+  background-position: 0 110px,105px 142px,0 -66px;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto, auto, cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../../img/phone-mobile2x.png"),
+                      url("../../img/screen-mobile2x.jpg"),
+                      url("../../img/back-mobile2x.jpg");
+    background-size: 327px auto, 111px auto, cover;
+  }
+  &--closed {
+    height: 735px;
+    background-position: 0 176px,105px 208px,0 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 619px;
+    background-image: url("../../img/phone-tablet.png"),
+                      url("../../img/screen-tablet.jpg"),
+                      url("../../img/back-tablet.jpg");
+    background-position: 0 74px,372px 130px,0 -110px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: auto, auto, cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/phone-tablet2x.png"),
+                        url("../../img/screen-tablet2x.jpg"),
+                        url("../../img/back-tablet2x.jpg");
+      background-size: 660px auto, 195px auto, cover;
+    }
+    &--closed {
+      height: 729px;
+      background-position: 0 184px,372px 240px,0 0;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 853px;
+    background-image: url("../../img/phone-desktop.png"),
+                      url("../../img/screen-desktop.jpg"),
+                      url("../../img/back-desktop.jpg");
+    background-position: 144px 208px,712px 271px,0 0px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: auto, auto, cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/phone-desktop2x.png"),
+                        url("../../img/screen-desktop2x.jpg"),
+                        url("../../img/back-desktop2x.jpg");
+      background-size: 1050px auto, 230px auto, cover;
+    }
+  }
+}
+
+.intro__wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 391px 271px;
+  grid-template-columns: 1fr;
+
+  &--closed {
+    grid-template-rows: 457px 271px;
+  }
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 166px 231px;
+    grid-template-columns: 300px;
+    justify-content: left;
+    margin-left: 20px;
+    margin-top: 0;
+
+    &--closed {
+      margin-top: 90px;
+    }
+  }
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 225px 276px;
+    grid-template-columns: 300px;
+    justify-content: left;
+    margin-left: 130px;
+    margin-top: 80px;
+  }
+}
+
+.intro__download-wrapper {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  justify-content: center;
+  padding-top: 28px;
+  padding-bottom: 38px;
+  background-color: $menu-background;
+
+  @media (min-width: $tablet-width) {
+    background-color: transparent;
+    padding: 0;
+  }
+  @media (min-width: $desktop-width) {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.intro__slogan {
+  display: block;
+  font-weight: 300;
+  margin: 28px 20px 0 20px;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  &--closed {
+    margin: 94px 20px 0 20px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0 50px;
+  }
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 68px;
+    margin: 0 38px;
+  }
+}
+
+.logos {
+  align-self: center;
+}
+
+.logos__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.logos__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logos__item {
+  display: block;
+}
+
+.logos__item--microsoft {
+  width: 44px;
+  height: 44px;
+  justify-self: start;
+  margin-left: 10px;
+}
+
+.logos__item--android {
+  width: 43px;
+  height: 47px;
+  justify-self: center;
+}
+
+.logos__item--apple {
+  width: 47px;
+  height: 56px;
+  justify-self: end;
+  margin-right: 10px;
+}
+
+.logos__desc {
+  margin: 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 296px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 296px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.intro__button {
+  display: flex;
+  width: 274px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px solid $menu-text;
+  border-radius: 29px;
+  text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    width: 294px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 294px;
+  }
+}
+
+.intro__button:hover {
+  background-color: $menu-text;
+}
+
+.intro__button:hover .intro__button-text {
+  color: $firm-text;
+}
+
+.intro__button:active .intro__button-text {
+  opacity: 0.3;
+}
+
+.intro__button-text {
+  margin: auto;
+  padding: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: $menu-text;
+}

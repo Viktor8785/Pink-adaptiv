@@ -1,0 +1,33 @@
+/* GLOBAL */
+@import "global/variables";
+@import "global/global";
+@import "global/fonts";
+
+/* BLOCKS */
+
+/* INDEX */
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/main-nav";
+@import "blocks/intro";
+@import "blocks/page-main";
+@import "blocks/advantages";
+@import "blocks/proof";
+@import "blocks/reviews";
+@import "blocks/price";
+@import "blocks/contacts";
+@import "blocks/footer";
+
+/* FORM */
+@import "blocks/intro-form";
+@import "blocks/form";
+@import "blocks/form-name";
+@import "blocks/form-achievments";
+@import "blocks/form-contacts";
+@import "blocks/form-applications";
+@import "blocks/form-emotions";
+
+/* CATALOG */
+@import "blocks/intro-catalog";
+@import "blocks/catalog-galery";
+@import "blocks/catalog-post";
